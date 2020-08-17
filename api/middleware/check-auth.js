@@ -8,9 +8,10 @@ module.exports = (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_KEY);
         //let parsed = JSON.parse(decoded);
         //console.log(parsed);
-        console.log("Decoded String follows----------------------------");
-        if(role[decoded.role].find(function(url){ return url==req.baseUrl})){req.user=decoded
-next();
+        if(role[decoded.role].find(function(url){ return url==req.baseUrl}))
+        {
+            req.user=decoded;
+            next();
 }
 else
 return res.status(401).json({message: 'Access Denied: You dont have correct privilege to perform this operation'});

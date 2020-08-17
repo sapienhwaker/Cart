@@ -3,4 +3,5 @@ admin: ["/products", "/orders"],
 //customer: ["/products"],
 //vendor: ["/products"],
 //contractor: ["/products"]
+//bankmanager: []
 }

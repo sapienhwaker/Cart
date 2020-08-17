@@ -10,10 +10,11 @@ const adminProfileRoutes = require('./api/routes/profiles/adminProfile');
 const customerProfileRoutes = require('./api/routes/profiles/customerProfile');
 const contractorProfileRoutes = require('./api/routes/profiles/contractorProfile');
 const vendorProfileRoutes = require('./api/routes/profiles/vendorPofile');
+require('dotenv').config();
 
-mongoose.connect('mongodb+srv://node-shop:'
+mongoose.connect(process.env.MONGO_ATLAS_PROJECT
 + process.env.MONGO_ATLAS_PASSWORD +
-'@node-rest-shop-pgkuv.mongodb.net/test?retryWrites=true&w=majority',
+process.env.MONGO_ATLAS_DB,
 {
   useMongClient: true,
   useNewUrlParser: true,
